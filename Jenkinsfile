@@ -8,19 +8,19 @@ pipeline{
 		}
 	stage('compile and build'){
 	parallel{
-	stage('build x'){
+	stage('2-dish usage'){
 		steps{
-	sh'action build x'
+	sh'du -h'
 	}
 	}
-	stage('build y'){
+	stage('memory usage'){
 		steps{
-			sh'action build y'
+			sh'free -g'
 		}
 	}
-	stage('build c'){
+	stage('cpu check'){
 		steps{
-			sh'action build c'
+			sh'lscpu'
 		}
 	}
 	}
