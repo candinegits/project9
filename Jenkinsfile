@@ -3,7 +3,7 @@ pipeline{
 	stages{
 		stage('version control'){
 			steps{
-				sh'git checkout'
+				checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/candinegits/project9.git']]])
 			}
 		}
 	stage( 'compile and build'){
